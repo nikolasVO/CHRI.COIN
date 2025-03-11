@@ -1,0 +1,107 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: #000; /* Чёрный фон */
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+/* Логотип по центру */
+#logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px; /* Размер логотипа */
+    height: 150px;
+    cursor: pointer;
+    z-index: 1; /* Логотип выше пирогов */
+}
+
+/* Ссылки внизу */
+.links {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    z-index: 1; /* Ссылки выше пирогов */
+}
+
+.links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+/* Стиль для падающих пирогов */
+.falling-pie {
+    position: absolute;
+    width: 50px; /* Размер пирога */
+    height: 50px;
+    top: -50px; /* Начинают падение сверху */
+    animation: fall linear infinite;
+    z-index: 0; /* Пироги под текстом и логотипом */
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh); /* Падение до нижней границы экрана */
+    }
+}
+
+/* Полупрозрачный лист с информацией */
+.info-sheet {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный тёмный фон */
+    justify-content: center;
+    align-items: center;
+    z-index: 2; /* Лист выше всего */
+}
+
+.sheet-content {
+    background-color: rgba(50, 50, 50, 0.9); /* Полупрозрачный тёмно-серный фон */
+    padding: 30px;
+    border-radius: 10px;
+    text-align: left;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto; /* Добавляем прокрутку, если текст не помещается */
+    color: #fff; /* Текст белый */
+    line-height: 1.6;
+}
+
+.sheet-content h2 {
+    margin-top: 0;
+    font-size: 28px;
+    color: #ffcc00; /* Жёлтый цвет для заголовка */
+}
+
+.sheet-content h3 {
+    font-size: 22px;
+    color: #ffcc00; /* Жёлтый цвет для подзаголовков */
+}
+
+.sheet-content ul {
+    padding-left: 20px;
+}
+
+.sheet-content a {
+    color: #ffcc00; /* Жёлтый цвет для ссылок */
+    text-decoration: none;
+}
+
+.sheet-content a:hover {
+    text-decoration: underline;
+}
